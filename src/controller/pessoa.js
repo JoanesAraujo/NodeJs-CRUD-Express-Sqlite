@@ -21,6 +21,9 @@ export async function updatePessoa(req, res){
     openDb().then(db => {
         db.run ('UPDATE pessoa SET nome=?, idade=? WHERE id=?', [pessoa.nome, pessoa.idade, pessoa.id]);
     });
+    res.json({
+        "statusCode": 200
+    })
 }
 
 export async function selectPessoas(req, res){
